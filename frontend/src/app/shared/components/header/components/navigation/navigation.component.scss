@@ -1,0 +1,57 @@
+@import "src/styles/colors.scss";
+
+.container-nav {
+  font-family: 'Inter Regular';
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 30px);;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff; /* Para destacar o nav */
+
+  .contents-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      pointer-events: auto;
+      text-decoration: none;
+      color: black;
+      
+      &:hover {
+        color: $primary-color-medium;
+      }
+    }
+  }
+}
+
+/* Tornar o menu responsivo */
+@media (max-width: 768px) {
+  .container-nav {
+    position: fixed;
+    bottom: 0;
+    top: auto; /* Remove o "top" */
+    width: 100%;
+    padding: 16px;
+    justify-content: center; /* Centraliza o conteúdo no container */
+
+    .contents-nav {
+      width: 100%;
+      gap: 10px; /* Ajuste o espaço entre os itens */
+      justify-content: space-evenly;
+    }
+  }
+
+  /* Esconder logo no mobile, se necessário */
+  .logo-nav {
+    display: none;
+  }
+}

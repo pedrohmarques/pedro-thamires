@@ -1,0 +1,18 @@
+@import "src/styles/colors.scss";
+
+.container-box {
+    background-color: $white;
+    width: 50%;
+    margin: auto; 
+
+    .content-box {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 25px;
+
+        .box-title {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import "src/styles/colors.scss";
+.noivos {
+    text-align: center;
+    color: $white;
+
+    .name {
+        font-family: 'Playfair Display Italic';
+        font-size: 6rem;
+    }
+    .date {
+        font-family: 'Inter Semi Bold';
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 3rem !important;
+    } 
+}

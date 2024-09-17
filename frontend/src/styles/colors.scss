@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Colors
+// -----------------------------------------------------------------------------------------------------
+
+// default colors
+$white: #ffffff !default;
+$black: #000000 !default;
+
+// gray
+$gray-900: #D9D9D9 !default;
+$gray-800: #6D6F72 !default;
+$gray-650: #6D6D6D !default;
+$gray-500: #333333 !default;
+$gray-400: #595959 !default;
+$gray-300: #949494 !default;
+$gray-200: #cccccc !default;
+$gray-100: #EBEBEB !default;
+
+// green
+$green-500: #0B4124 !default;
+$green-400: #115F22 !default;
+$green-350: #52E092 !default;
+$green-300: #1CA058 !default;
+$green-200: #7DE8AD !default;
+$green-100: #DCF9E9 !default;
+
+// blue
+$blue-600: #102956 !default;
+$blue-550: #1B4693 !default;
+$blue-500: #102956 !default;
+$blue-400: #1F52AB !default;
+$blue-350: #0074C0 !default;
+$blue-300: #5286E0 !default;
+$blue-200: #A9C2EF !default;
+$blue-100: #E0E9F6 !default;
+
+// red
+$red-500: #660700 !default;
+$red-400: #A80B00 !default;
+$red-300: #ff2e1f !default;
+$red-200: #ffa099 !default;
+$red-100: #FFD9D6 !default;
+
+// yellow
+$yellow-500: #5F4407 !default;
+$yellow-400: #BD870F !default;
+$yellow-300: #F0BA42 !default;
+$yellow-200: #F8DDA0 !default;
+$yellow-100: #FDF1D8 !default;
+
+// purple
+$purple-500: #250a5c !default;
+$purple-400: #4a13b9 !default;
+$purple-300: #7d46ec !default;
+$purple-200: #BEA2F6 !default;
+$purple-100: #E5DAFB !default;
+
+// blue2
+$blue2-500: #0A535C !default;
+$blue2-400: #13A1B4 !default;
+$blue2-350: #0074C0 !default;
+$blue2-300: #46D8EC !default;
+$blue2-200: #A2ECF6 !default;
+$blue2-100: #DAF7FB !default;
+
+// orange
+$orange-500: #5C220A !default;
+$orange-400: #993910 !default;
+$orange-300: #EC7846 !default;
+$orange-200: #F6BBA2 !default;
+$orange-100: #FBE4DA !default;
+
+// pink
+$pink-500: #5C0A31 !default;
+$pink-400: #AB125B !default;
+$pink-300: #EC4696 !default;
+$pink-200: #F6A2CA !default;
+$pink-100: #FBDAEA !default;
+
+// brown
+$brown-100: #F0EAE5;
+$brown: #946300;
+
+// -----------------------------------------------------------------------------------------------------
+// @ Themes Colors
+// -----------------------------------------------------------------------------------------------------
+
+// primary colors
+$primary-color-light: #DADEFB;
+$primary-color-medium: #1226AA;
+$primary-color-dark: #0A155C;
+
+// secondary colors
+$secondary-color-light: #C3B1E7;
+$secondary-color-medium: #693CC1;
+$secondary-color-dark: #2A184E;
+
+// success colors
+$success-color-light: $green-100;
+$success-color-medium: $green-300;
+$success-color-dark: $green-400;
+
+// error colors
+$error-color-light: $red-100;
+$error-color-medium: $red-300;
+$error-color-dark: $red-400;
+
+// -----------------------------------------------------------------------------------------------------
+// @ Default Colors
+// -----------------------------------------------------------------------------------------------------
+$background-box-color: $white;
