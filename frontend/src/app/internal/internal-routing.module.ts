@@ -11,11 +11,13 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+        data: { animation: 'HomePage' },
         loadChildren: () => import('./views/home/home.module').then(mod => mod.HomeModule),
       },
       {
         path: 'about',
         component: AboutComponent,
+        data: { animation: 'AboutPage' },
         loadChildren: () => import('./views/about/about.module').then(mod => mod.AboutModule),
       },
       {

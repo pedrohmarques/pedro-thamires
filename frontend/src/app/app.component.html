@@ -1,7 +1,7 @@
 <app-header> 
     <div class="container-home">
-        <div class="image-home">
-            <router-outlet></router-outlet>
+        <div class="image-home" [@fadeInOut]="outletRef.isActivated ? outletRef.activatedRoute : ''">
+            <router-outlet #outletRef="outlet"></router-outlet>
         </div>
       </div>    
 </app-header>

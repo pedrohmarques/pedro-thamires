@@ -1,3 +1,7 @@
-.about {
-    text-align: justify;
+.container {
+    max-height: 500px;
+    overflow: auto;
+    .about {
+        text-align: justify;
+    }
 }

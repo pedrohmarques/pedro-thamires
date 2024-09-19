@@ -1,9 +1,21 @@
 @import "src/styles/colors.scss";
 
 .container-box {
-    background-color: $white;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    // transform: translate(-50%, -50%);
+    transform: translateX(-50%); /* Alinha apenas horizontalmente */
+
+    background-color: rgba(255, 255, 255, 0.8);
     width: 50%;
     margin: auto; 
+
+    border: 1px solid $gray-300;
+    box-shadow: 0 2px 3px #00000080 !important;
+    border-radius: 5px;
+    max-height: 45rem;
+    overflow-y: auto; 
 
     .content-box {
         display: flex;
@@ -13,6 +25,8 @@
 
         .box-title {
             text-align: center;
+            font-family: 'Playfair Display Italic';
+            font-size: 3rem;
         }
     }
 }
