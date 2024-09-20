@@ -6,7 +6,7 @@
       <span class="name">{{ product.name }}</span>
       <a *ngIf="product?.recomendation" target="_blank" [href]="product.recomendation">Recomendação</a>
 
-      <button mat-raised-button color="accent" class="button-gift" *ngIf="!product.author" style="margin-top: 5px;" (click)="handleToGift(product)">PRESENTEAR</button>
+      <button mat-raised-button color="accent" *ngIf="!product.author" style="margin-top: 5px;" (click)="handleToGift(product)">PRESENTEAR</button>
 
       <div *ngIf="product.author" class="giftedBy" style="margin-top: 5px;">
         <span class="by">Presentado por: </span>
