@@ -1,0 +1,19 @@
+<div class="container-gift">
+  <app-generic-box [title]="'Presentes'" [widthStyle]="'80%'">
+    <div class="container">
+      <div class="pix">
+        <!-- https://geradordepix.com/ -->
+        <div class="qrcode"></div>
+        <span class="title-pix">Código Pix:</span>
+        <div class="copy-paste">
+          <span class="key">{{ pixKey }}</span>
+          <div class="copy" (click)="handleCopy()"></div>
+        </div>
+      </div>
+      
+      <app-information [text]="info"></app-information>
+
+      <app-product-list [products]="products" (toGift)="openModal($event)"></app-product-list>
+    </div>
+  </app-generic-box>
+</div>

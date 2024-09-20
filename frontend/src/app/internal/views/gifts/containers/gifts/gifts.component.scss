@@ -1,0 +1,74 @@
+.container-gift {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .pix {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center; 
+        justify-content: center; 
+        width: 100%;
+        gap: 10px;
+
+        .title-pix {
+          display: none;
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+  
+        .qrcode {
+          width: 100px;
+          height: 100px;
+          background-image: url('../../../../../../assets/qrcode-pix.png');
+          background-position: center;
+          background-size: cover; 
+          background-repeat: no-repeat;
+        }
+  
+        .copy-paste {
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 10px;
+          text-align: center; 
+          overflow: hidden; 
+          background-color: white;
+            border: 1px solid #949494;
+            box-shadow: 0 2px 3px #00000080 !important;
+            border-radius: 4px;
+            padding: 10px;
+  
+          .key {
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            display: block; 
+            flex: 1;
+          }
+          .copy {
+            background-image: url('../../../../../../assets/icons/clipboard.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 2rem;
+            flex-shrink: 0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pix {
+      .qrcode {
+        display: none;
+      }
+      .title-pix {
+        display: block !important;
+      }
+    }
+  }

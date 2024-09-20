@@ -1,0 +1,11 @@
+<div class="container-photos">
+  <app-generic-box [title]="'Fotos'" [widthStyle]="'80%'">
+    <div class="container">
+      <div class="images" *ngFor="let photo of photos">
+        <div class="box">
+          <img [src]="getUrl(photo)" />
+        </div>
+      </div>
+    </div>
+  </app-generic-box>
+</div>

@@ -1,4 +1,5 @@
 @import "src/styles/font-faces.scss";
+@import "src/styles/colors.scss";
 body {
     margin: 0;
 }
@@ -17,9 +18,9 @@ html, body {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: red;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: blue;
+  background: rgba(0, 0, 0, 0.4);
 }

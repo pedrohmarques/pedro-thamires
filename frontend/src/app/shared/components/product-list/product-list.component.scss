@@ -1,0 +1,109 @@
+@import "src/styles/colors.scss";
+
+.container-products {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+
+    .products {            
+        width: calc(15% - 10px); /* 25% para 4 fotos por linha, subtraindo margens */
+        // width: 30%;
+        margin-bottom: 10px; /* Espaçamento entre as linhas */
+        overflow: hidden; /* Esconde partes da imagem que ultrapassam o contêiner */
+
+        .box {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            border: 2px solid $blue-300;
+            padding: 5px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px #00000080 !important;
+
+            .name {
+                // font-family: 'Playfair Display Italic';
+                text-align: center;
+                font-size: 15px;
+                font-weight: bold;
+                font-style: italic;
+
+                display: block;
+                width: 100%;
+                white-space: nowrap; 
+                overflow: hidden; 
+                text-overflow: ellipsis; 
+            }
+
+            .button-gift {
+                font-family: "Inter", "Inter Regular", Helvetica, Arial, sans-serif;
+                color: $blue-300;
+                background-color: rgba(255, 255, 255, 0.8);
+                border: none;
+                border-radius: 4px;
+                padding: 4px 16px;
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);                
+            }
+
+            .giftedBy {
+                font-size: 10px;
+                font-weight: bold;
+                // text-align: center;
+                .author {                    
+                    font-family: 'Playfair Display Italic';                    
+                    font-style: italic;
+                }
+            }
+
+            a {
+                pointer-events: auto;
+                text-decoration: none;
+                font-size: 12px;
+                color: $primary-color-medium;
+                
+                &:hover {
+                  color: $primary-color-medium;
+                }
+              }
+
+            img {
+                width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+                height: 100%; /* Faz a imagem ocupar toda a altura do contêiner */
+                object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+    } 
+}
+
+/* Media query para dispositivos menores */
+@media (max-width: 768px) {
+    .products {
+      width: calc(50% - 10px) !important; /* 2 fotos por linha em telas menores */
+    }
+  }
+  
+@media (max-width: 480px) {
+    .container-products {
+        max-height: 350px;
+    }
+    .products {
+        width: calc(100% - 10px) !important; /* 1 foto por linha em telas muito pequenas */
+    }
+}
+
+@media (max-width: 380px) {
+    .container-products {
+        max-height: 200px;
+    }
+}

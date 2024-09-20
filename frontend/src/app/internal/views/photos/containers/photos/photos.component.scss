@@ -1,0 +1,50 @@
+.container-photos {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 500px;
+        overflow: auto;
+
+        .images {            
+            width: calc(30% - 10px); /* 25% para 4 fotos por linha, subtraindo margens */
+            margin-bottom: 10px; /* Espaçamento entre as linhas */
+            overflow: hidden; /* Esconde partes da imagem que ultrapassam o contêiner */
+
+            .box {
+                border: 2px solid #949494;
+                padding: 5px;
+                background: white;
+                border-radius: 4px;
+                box-shadow: 0 2px 3px #00000080 !important;
+
+                img {
+                    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+                    height: 100%; /* Faz a imagem ocupar toda a altura do contêiner */
+                    object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
+                    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+
+        }        
+    }
+}
+
+/* Media query para dispositivos menores */
+@media (max-width: 768px) {
+    .images {
+      width: calc(50% - 10px); /* 2 fotos por linha em telas menores */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .images {
+      width: calc(100% - 10px); /* 1 foto por linha em telas muito pequenas */
+    }
+  }
