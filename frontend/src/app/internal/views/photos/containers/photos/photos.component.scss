@@ -44,7 +44,20 @@
   }
   
   @media (max-width: 480px) {
+    .container-photos {
+     .container {
+      max-height: 350px;
+  } 
+    }
     .images {
       width: calc(100% - 10px); /* 1 foto por linha em telas muito pequenas */
     }
   }
+
+@media (max-width: 380px) {
+    .container-photos {
+     .container {
+        max-height: 200px;
+    } 
+    }
+}
