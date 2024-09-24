@@ -13,7 +13,11 @@
       
       <app-information [text]="info"></app-information>
 
-      <app-product-list [products]="products" (toGift)="openModal($event)"></app-product-list>
+      <div class="spinner" *ngIf="showLoading">
+        <mat-spinner></mat-spinner>
+        <span class="spinner-message">Estamos carregando os presentes. Aguarde um momento.</span>
+      </div>
+      <app-product-list *ngIf="!showLoading" [products]="products" (toGift)="openModal($event)"></app-product-list>
     </div>
   </app-generic-box>
 </div>

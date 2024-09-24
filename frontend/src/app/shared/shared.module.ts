@@ -15,6 +15,7 @@ import { NavigationComponent } from './components/header/components/navigation/n
 import { GenericBoxComponent } from './components/generic-box/generic-box.component';
 import { InformationComponent } from './components/information/information.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ModalLoadingComponent } from './components/modal-loading/modal-loading.component';
 
 
 
@@ -35,6 +36,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
 
 NavigationComponent
 
@@ -45,7 +49,8 @@ NavigationComponent
     NavigationComponent,
     GenericBoxComponent,
     InformationComponent,
-    ProductListComponent
+    ProductListComponent,
+    ModalLoadingComponent
   ],
   imports: [
     CommonModule,
@@ -73,7 +78,8 @@ NavigationComponent
     MatTabsModule,
     MatSnackBarModule,
     MatTableModule,
-    MatTooltipModule    
+    MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -102,6 +108,7 @@ NavigationComponent
     MatSnackBarModule,
     MatTableModule,
     MatTooltipModule, 
+    MatProgressSpinnerModule,
 
     HeaderComponent,
     FooterComponent,
@@ -109,6 +116,7 @@ NavigationComponent
     GenericBoxComponent,
     InformationComponent,
     ProductListComponent,
+    ModalLoadingComponent
     
   ],
   providers: [

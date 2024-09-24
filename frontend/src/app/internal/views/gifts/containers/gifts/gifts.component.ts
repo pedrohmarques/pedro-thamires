@@ -11,27 +11,13 @@ import { ModalGiftComponent } from './modal/modal-gift/modal-gift.component';
 export class GiftsComponent implements OnInit {
   pixKey = "00020126420014BR.GOV.BCB.PIX0120pdhmarques@gmail.com5204000053039865802BR5901N6001C62070503***6304FF08"
   info = "A escolha do presente recomendado não é obrigatória; você pode optar por um presente de sua preferência."
-
-  products = [{
-    image: '1.jpeg',
-    name: 'Kit Roupa de Cama',
-    recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
-    author: 'Pedro Henrique Marques Almeida'
-  },{
-    image: '1.jpeg',
-    name: 'Kit Roupa de Cama',
-    recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
-    author: 'Pedro Henrique Marques Almeida'
-  },{
-    image: '1.jpeg',
-    name: 'Kit Roupa de Cama',
-    recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
-    author: null
-  }]
+  showLoading = true;
+  products = [{}]
 
   constructor(public clipboard: Clipboard, public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.getProducts()
   }
 
   handleCopy() {
@@ -45,5 +31,26 @@ export class GiftsComponent implements OnInit {
         product
       }
     })
+  }
+
+  getProducts() {
+    this.products = [{
+      image: 'https://img.freepik.com/vetores-gratis/fogao-a-gas-com-fogao-de-cozinha_134830-659.jpg',
+      name: 'Kit Roupa de Cama',
+      recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
+      author: 'Pedro Henrique Marques Almeida'
+    },{
+      image: 'https://img.freepik.com/vetores-gratis/fogao-a-gas-com-fogao-de-cozinha_134830-659.jpg',
+      name: 'Kit Roupa de Cama',
+      recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
+      author: 'Pedro Henrique Marques Almeida'
+    },{
+      image: 'https://img.freepik.com/vetores-gratis/fogao-a-gas-com-fogao-de-cozinha_134830-659.jpg',
+      name: 'Kit Roupa de Cama',
+      recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
+      author: null
+    }]
+
+    this.showLoading = false;
   }
 }

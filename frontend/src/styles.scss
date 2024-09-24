@@ -24,3 +24,12 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
 }
+
+.mat-mdc-raised-button:not(:disabled) {
+  color: $primary-color-medium !important;
+  background-color: $primary-color-light !important;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: $primary-color-medium !important;
+}

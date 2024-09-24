@@ -10,9 +10,8 @@
     max-height: 400px;
     overflow: auto;
 
-    .products {            
-        width: calc(15% - 10px); /* 25% para 4 fotos por linha, subtraindo margens */
-        // width: 30%;
+    .products {     
+        width: calc(20% - 10px); /* 25% para 4 fotos por linha, subtraindo margens */
         margin-bottom: 10px; /* Espaçamento entre as linhas */
         overflow: hidden; /* Esconde partes da imagem que ultrapassam o contêiner */
 
@@ -52,7 +51,7 @@
             }
 
             .giftedBy {
-                font-size: 10px;
+                font-size: 11px;
                 font-weight: bold;
                 // text-align: center;
                 .author {                    
@@ -87,13 +86,20 @@
 }
 
 /* Media query para dispositivos menores */
+@media (max-width: 1060px) {
+    .products {
+      width: calc(25% - 10px) !important; /* 2 fotos por linha em telas menores */
+    }
+  }
+
+/* Media query para dispositivos menores */
 @media (max-width: 768px) {
     .products {
       width: calc(50% - 10px) !important; /* 2 fotos por linha em telas menores */
     }
   }
   
-@media (max-width: 480px) {
+@media (max-width: 540px) {
     .container-products {
         max-height: 350px;
     }

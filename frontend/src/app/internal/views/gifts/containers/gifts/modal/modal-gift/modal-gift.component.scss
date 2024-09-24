@@ -1,0 +1,65 @@
+@import "src/styles/colors.scss";
+
+.container-modal {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    img {
+        width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+        height: 100%; /* Faz a imagem ocupar toda a altura do contêiner */
+        object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
+    }
+
+    .form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        .inputs {
+            
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 16px;
+        }
+    }
+
+    /* Estilo do campo de formulário */
+    
+}
+
+::ng-deep {
+  .mdc-notched-outline__leading {
+    border-color: $primary-color-light !important;
+  }
+  .mdc-notched-outline__notch {
+    border-color: $primary-color-light !important;
+  }
+  .mdc-notched-outline__trailing {
+    border-color: $primary-color-light !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+     border-color: red !important;
+  }
+  mat-form-field {
+    width: 100%;
+
+    mat-error {
+      display: flex !important;
+      justify-content: flex-end !important;
+    }
+  }
+}

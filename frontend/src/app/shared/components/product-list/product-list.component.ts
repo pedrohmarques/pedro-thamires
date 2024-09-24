@@ -9,14 +9,12 @@ export class ProductListComponent implements OnInit {
 
   @Input() products: any;
   @Output() toGift: EventEmitter<any> = new EventEmitter();
+  
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { 
 
-  getUrl(photo: string) {
-    return `../../../../../../assets/images/${photo}`
-  }
+   }
 
   handleToGift(product: any) {
     this.toGift.emit(product)
