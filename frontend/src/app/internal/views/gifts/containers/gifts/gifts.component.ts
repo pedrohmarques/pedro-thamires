@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalGiftComponent } from './modal/modal-gift/modal-gift.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpService } from 'src/app/service/http.service';
+import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-gifts',
@@ -12,9 +15,9 @@ export class GiftsComponent implements OnInit {
   pixKey = "00020126420014BR.GOV.BCB.PIX0120pdhmarques@gmail.com5204000053039865802BR5901N6001C62070503***6304FF08"
   info = "A escolha do presente recomendado não é obrigatória; você pode optar por um presente de sua preferência."
   showLoading = true;
-  products = [{}]
+  products: any
 
-  constructor(public clipboard: Clipboard, public dialog: MatDialog) { }
+  constructor(public clipboard: Clipboard, public dialog: MatDialog, private snackBar: MatSnackBar, private readonly http: HttpService) { }
 
   ngOnInit() {
     this.getProducts()
@@ -22,6 +25,11 @@ export class GiftsComponent implements OnInit {
 
   handleCopy() {
     this.clipboard.copy(this.pixKey)
+    this.snackBar.open('Código copiado com sucesso.', '', {
+      duration: 2000,
+      horizontalPosition: 'end',
+      verticalPosition: 'top'
+    })
   }
 
   openModal(product: any) {
@@ -31,26 +39,32 @@ export class GiftsComponent implements OnInit {
         product
       }
     })
+
+    dialogRef.afterClosed().subscribe({
+      next: (res) => {
+        if (res) {
+          this.snackBar.open('Agradecemos muito pelo presente.', '', {
+            duration: 2000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top'
+          })
+          this.getProducts();
+        }
+      }
+    })
   }
 
   getProducts() {
-    this.products = [{
-      image: 'https://img.freepik.com/vetores-gratis/fogao-a-gas-com-fogao-de-cozinha_134830-659.jpg',
-      name: 'Kit Roupa de Cama',
-      recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
-      author: 'Pedro Henrique Marques Almeida'
-    },{
-      image: 'https://img.freepik.com/vetores-gratis/fogao-a-gas-com-fogao-de-cozinha_134830-659.jpg',
-      name: 'Kit Roupa de Cama',
-      recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
-      author: 'Pedro Henrique Marques Almeida'
-    },{
-      image: 'https://img.freepik.com/vetores-gratis/fogao-a-gas-com-fogao-de-cozinha_134830-659.jpg',
-      name: 'Kit Roupa de Cama',
-      recomendation: 'https://www.lindacasa.com.br/jogo-de-lencol-percal-400-fios-ponto-palito-grafitec/p?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH52kuLCy9WV_2PxmFVtgiukF6vUqlRQMIoe6aB9rL4aHgw5os-sGV-8aApmiEALw_wcB',
-      author: null
-    }]
-
-    this.showLoading = false;
+    this.http.httpGet('gift').subscribe({
+      next: (response)=> {
+        if(response) {
+          this.products = response;
+        }
+        this.showLoading = false;
+      },
+      error: () => {
+        this.showLoading = false;
+      }      
+    })
   }
 }

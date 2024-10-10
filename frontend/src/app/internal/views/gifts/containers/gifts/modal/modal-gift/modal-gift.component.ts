@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { ModalLoadingComponent } from 'src/app/shared/components/modal-loading/modal-loading.component';
+import { HttpService } from 'src/app/service/http.service';
 
 
 @Component({
@@ -11,10 +12,9 @@ import { ModalLoadingComponent } from 'src/app/shared/components/modal-loading/m
 })
 export class ModalGiftComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<ModalGiftComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private dialog: MatDialog) { }
+  constructor(private readonly httpService: HttpService, public dialogRef: MatDialogRef<ModalGiftComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private dialog: MatDialog) { }
 
   formGifter = new FormGroup({
-    quantity: new FormControl(1),
     gifter_name: new FormControl('', Validators.required)
   })
 
@@ -23,7 +23,6 @@ export class ModalGiftComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formGifter)
     const loading = this.dialog.open(ModalLoadingComponent, {
       width: '400px',
       disableClose: true,
@@ -31,6 +30,16 @@ export class ModalGiftComponent implements OnInit {
         message: "Estamos salvando os dados. Aguarde um momento."
       }
     });
+    this.httpService.httpPut(`gift/update/${this.data.product._id}`, { id: this.data.product._id, gifter_name: this.formGifter.get('gifter_name')?.value }).subscribe({
+      next: () => {
+        loading?.close()
+        this.dialogRef.close(true)    
+      },
+      error: () => {
+        loading?.close();
+        this.dialogRef.close(false)
+      }
+    })
   }
 
   handleClose() {

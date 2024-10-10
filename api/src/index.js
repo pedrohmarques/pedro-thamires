@@ -1,9 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const userRoutes = require('./routes/user/index')
+const giftRoutes = require('./routes/gift/index')
 
 
 const app = express()
+app.use(cors())
 app.use(express.json());
 
 // Mongo Connect
@@ -16,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', userRoutes);
-
+app.use('/gift', giftRoutes)
 
 // Server
 const PORT = 3000;
